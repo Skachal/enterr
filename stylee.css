@@ -230,9 +230,190 @@ form button:hover {
   }
   
 .cards div {
-    font-size: 10px;
+    font-size: 7px;
   }
   .subtitle {
     font-size: 1rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+* {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at top right, #0f001f, #000420);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      gap: 1rem;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-button {
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .cta-button:hover {
+      background: white;
+      color: #111;
+    }
+
+    .cta-button.gradient {
+      background: linear-gradient(270deg, #0044ff, #009dff, #9000ff);
+      background-size: 600% 600%;
+      animation: gradientFlow 20s ease infinite;
+      color: white;
+    }
+
+    .form-container {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgb(0 0 0 / 82%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.form-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+form {
+  background: #1515158c;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+form h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #2222228f;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+}
+
+.form-group img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.75;
+}
+
+.form-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+form button {
+  background: linear-gradient(90deg, #00c8ff87, #6f00ff82);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+form button:hover {
+  background: white;
+  color: #000;
+}
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .subtitle {
+        font-size: 1rem;
+      }
+      .cta-button{
+        font-size: 15px;
+      }
+    }
